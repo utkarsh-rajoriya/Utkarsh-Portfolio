@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+
+/* Hide scrollbar — Chrome/Safari/Edge */
+::-webkit-scrollbar { display: none; }
+/* Hide scrollbar — Firefox */
+* { scrollbar-width: none; }
+/* Hide scrollbar — IE/Edge legacy */
+* { -ms-overflow-style: none; }
+
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50%       { background-position: 100% 50%; }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 25px rgba(99,102,241,0.35), 0 0 50px rgba(99,102,241,0.12); }
+  50%       { box-shadow: 0 0 50px rgba(99,102,241,0.65), 0 0 90px rgba(99,102,241,0.22); }
+}
+
+.animate-spin-slow { animation: spinSlow 20s linear infinite; }
+.animate-gradient  { background-size: 200% 200%; animation: gradientShift 5s ease infinite; }
+.animate-glow      { animation: pulseGlow 3s ease-in-out infinite; }
