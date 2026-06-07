@@ -59,7 +59,7 @@ export default function Education() {
   }, []);
 
   return (
-    <section id="education" ref={secRef} className="py-28 bg-[#060b14] relative overflow-hidden">
+    <section id="education" ref={secRef} className="py-20 bg-[#060b14] relative overflow-hidden">
       <div className="absolute left-0 top-1/3 w-72 h-72 bg-indigo-700/4 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

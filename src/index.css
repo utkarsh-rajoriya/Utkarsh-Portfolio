@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+html {
+  scroll-behavior: auto; /* GSAP ScrollToPlugin handles smooth scrolling */
+}
 
 /* Hide scrollbar — Chrome/Safari/Edge */
 ::-webkit-scrollbar { display: none; }

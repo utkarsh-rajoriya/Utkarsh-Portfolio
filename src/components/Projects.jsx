@@ -113,7 +113,7 @@ export default function Projects() {
   }, []);
 
   return (
-    <section id="projects" ref={secRef} className="py-28 bg-[#0a1019] relative overflow-hidden">
+    <section id="projects" ref={secRef} className="py-20 bg-[#0a1019] relative overflow-hidden">
       <div className="absolute left-1/2 top-0 -translate-x-1/2 w-96 h-96 bg-indigo-700/4 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">

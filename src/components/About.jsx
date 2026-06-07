@@ -3,7 +3,7 @@ import { gsap } from '../utils/gsap';
 
 const stats = [
   { num: 2,  suffix: '+', label: 'Years Experience', icon: '⚡' },
-  { num: 4,  suffix: '+', label: 'Projects Built',   icon: '🚀' },
+  { num: 8,  suffix: '+', label: 'Projects Built',   icon: '🚀' },
   { num: 3,  suffix: '',  label: 'Tech Roles',        icon: '💼' },
   { num: 2026, suffix: '', label: 'BCA Graduate',     icon: '🎓' },
 ];
@@ -58,7 +58,7 @@ export default function About() {
   }, []);
 
   return (
-    <section id="about" ref={secRef} className="py-28 bg-[#060b14] relative overflow-hidden">
+    <section id="about" ref={secRef} className="py-20 bg-[#060b14] relative overflow-hidden">
       <div className="absolute right-0 top-0 w-80 h-80 bg-indigo-600/4 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">

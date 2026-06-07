@@ -13,7 +13,7 @@ export default function Hero() {
       tl
         .from('.h-badge',    { y: -30, opacity: 0, scale: 0.75, duration: 0.7 }, 0.25)
         .from('.h-hi',       { y: 70, opacity: 0, duration: 0.75 }, 0.5)
-        .from('.h-char',     { y: 90, opacity: 0, duration: 0.75, stagger: 0.18, ease: 'back.out(1.6)' }, 0.65)
+        .from('.h-char', { y: '100%', duration: 0.55, stagger: 0.04, ease: 'power3.out' }, 0.65)
         .from('.h-sub',      { y: 28, opacity: 0, duration: 0.6 }, 1.3)
         .from('.h-desc',     { y: 28, opacity: 0, duration: 0.6 }, 1.47)
         .from('.h-chip',     { x: -32, opacity: 0, duration: 0.5, stagger: 0.1 }, 1.62)
@@ -23,8 +23,6 @@ export default function Hero() {
         .from('.fb',         { scale: 0, opacity: 0, duration: 0.55, stagger: 0.14, ease: 'back.out(2.8)' }, 1.4);
 
       tl.call(() => {
-        // Clear GSAP-added transforms from word spans so bg-clip-text renders correctly
-        gsap.set('.h-char', { clearProps: 'transform,willChange' });
         gsap.to('.fb-1', { y: -14, duration: 2.3, repeat: -1, yoyo: true, ease: 'sine.inOut' });
         gsap.to('.fb-2', { y: -11, duration: 2.9, repeat: -1, yoyo: true, ease: 'sine.inOut', delay: 0.55 });
         gsap.to('.fb-3', { y: -17, duration: 3.2, repeat: -1, yoyo: true, ease: 'sine.inOut', delay: 0.28 });
@@ -77,40 +75,51 @@ export default function Hero() {
       <div className="h-blob-1 absolute top-16 -left-20 w-137.5 h-137.5 bg-indigo-700/14 rounded-full blur-3xl pointer-events-none" />
       <div className="h-blob-2 absolute bottom-0 right-0 w-105 h-105 bg-emerald-600/8 rounded-full blur-3xl pointer-events-none" />
 
-      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-24 w-full grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-10 w-full grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
 
         {/* ── Text column ── */}
-        <div className="h-text-col order-2 lg:order-1">
-          <div className="h-badge inline-flex items-center gap-2 px-3.5 py-1.5 bg-green-500/10 border border-green-500/20 rounded-full text-green-400 text-xs font-semibold mb-7">
+        <div className="h-text-col mt-2 order-2 lg:order-1">
+          <div className="h-badge inline-flex items-center gap-2 px-3.5 py-1 bg-green-500/10 border border-green-500/20 rounded-full text-green-400 text-xs font-semibold mb-4 lg:mb-7">
             <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
             Open to new opportunities
           </div>
 
-          <h1 className="text-5xl sm:text-6xl xl:text-7xl font-extrabold text-white mb-5 leading-[1.06] tracking-tight">
+          <h1 className="text-5xl sm:text-6xl xl:text-7xl font-extrabold text-white mb-3 lg:mb-5 leading-[1.06] tracking-tight">
             <div className="overflow-hidden">
               <span className="h-hi inline-block">Hi, I'm</span>
             </div>
-            <div className="py-1">
-              <span className="animate-gradient bg-linear-to-r from-indigo-400 via-blue-400 to-emerald-400 bg-clip-text text-transparent">
-                {NAME.split(' ').map((word, i, arr) => (
-                  <span key={i} className="h-char inline-block">
-                    {word}{i < arr.length - 1 ? ' ' : ''}
+            {/* Utkarsh — per-char mask reveal */}
+            <div className="block pt-1 pb-0.5">
+              {'Utkarsh'.split('').map((ch, i) => (
+                <span key={i} className="inline-block overflow-hidden align-bottom">
+                  <span className="h-char inline-block animate-gradient bg-linear-to-r from-indigo-400 via-blue-400 to-emerald-400 bg-clip-text text-transparent">
+                    {ch}
                   </span>
-                ))}
-              </span>
+                </span>
+              ))}
+            </div>
+            {/* Rajoriya — per-char mask reveal */}
+            <div className="block pb-1">
+              {'Rajoriya'.split('').map((ch, i) => (
+                <span key={i} className="inline-block overflow-hidden align-bottom">
+                  <span className="h-char inline-block animate-gradient bg-linear-to-r from-blue-400 via-emerald-300 to-emerald-400 bg-clip-text text-transparent">
+                    {ch}
+                  </span>
+                </span>
+              ))}
             </div>
           </h1>
 
           <p className="h-sub text-lg sm:text-xl text-gray-300 font-semibold mb-3">
             Software Engineer &amp; Full Stack Developer
           </p>
-          <p className="h-desc text-gray-500 mb-8 max-w-lg leading-relaxed text-[15px]">
+          <p className="h-desc text-gray-500 mb-5 lg:mb-8 max-w-lg leading-relaxed text-[15px]">
             Building scalable web applications with React.js and Java Spring Boot — from architecture
             and API design to high-end responsive frontends and secure platform integrations.
           </p>
 
           {/* Contact chips */}
-          <div className="flex flex-wrap gap-3 mb-9 text-xs text-gray-400">
+          <div className="flex flex-wrap gap-3 mb-5 lg:mb-9 text-xs text-gray-400">
             {[
               { icon: 'M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0zM15 11a3 3 0 11-6 0 3 3 0 016 0z', text: 'Agra, India' },
               { icon: 'M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z', text: 'utkarshrajoriya00@gmail.com' },
@@ -126,7 +135,7 @@ export default function Hero() {
           </div>
 
           {/* CTAs */}
-          <div className="flex flex-wrap gap-4 mb-10">
+          <div className="flex flex-wrap gap-4 mb-6 lg:mb-10">
             <a href="#projects" className="h-cta px-7 py-3.5 bg-linear-to-r from-indigo-600 to-blue-600 hover:from-indigo-500 hover:to-blue-500 text-white font-semibold rounded-xl transition-all duration-200 hover:shadow-xl hover:shadow-indigo-500/30 hover:-translate-y-0.5 text-sm">
               View Projects
             </a>
