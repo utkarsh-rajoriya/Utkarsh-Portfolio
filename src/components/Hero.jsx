@@ -183,7 +183,7 @@ export default function Hero() {
             </div>
             <div className="absolute inset-4 bg-linear-to-br from-indigo-600/30 to-emerald-500/20 rounded-full blur-2xl animate-glow" />
             <div className="h-img-wrap relative w-72 h-72 sm:w-80 sm:h-80 rounded-full overflow-hidden border-2 border-indigo-500/30 m-4">
-              <img src="https://picsum.photos/seed/utkarsh-hero/500/500" alt="Utkarsh Rajoriya" className="w-full h-full object-cover" />
+              <img src="/assets/utkarsh.png" alt="Utkarsh Rajoriya" className="w-full h-full object-cover" />
             </div>
 
             <div className="fb fb-1 absolute -top-3 right-4 px-3 py-1.5 bg-[#0c1220] border border-indigo-500/30 rounded-xl text-xs text-indigo-300 font-semibold shadow-xl whitespace-nowrap">React.js</div>

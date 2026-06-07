@@ -10,7 +10,7 @@ const skills = [
       </svg>
     ),
     color: 'indigo',
-    items: ['React.js', 'JavaScript', 'Tailwind CSS', 'Responsive Web Design', 'Interface Wireframing'],
+    items: ['React.js', 'Next.js', 'JavaScript', 'Bootstrap', 'Tailwind CSS', 'Responsive Web Design', 'Interface Wireframing'],
   },
   {
     category: 'Backend & Databases',
@@ -20,7 +20,7 @@ const skills = [
       </svg>
     ),
     color: 'emerald',
-    items: ['Java', 'Spring Boot', 'RESTful APIs', 'Node.js', 'Express', 'MySQL', 'MongoDB', 'Mongo Atlas'],
+    items: ['Java', 'Spring Boot', 'RESTful APIs', 'Node.js', 'Express', 'MySQL', 'PostgreSQL', 'MongoDB', 'Mongo Atlas', 'Firebase'],
   },
   {
     category: 'Core Competencies',
@@ -31,6 +31,16 @@ const skills = [
     ),
     color: 'blue',
     items: ['System Architecture', 'Agile Frameworks', 'Git & GitHub', 'Multi-Tenant SaaS', 'JWT & Firebase Security'],
+  },
+  {
+    category: 'DevOps & CI/CD',
+    icon: (
+      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" />
+      </svg>
+    ),
+    color: 'cyan',
+    items: ['Docker', 'GitHub Actions', 'Jenkins', 'CI/CD Pipelines', 'Git'],
   },
   {
     category: 'Design Tools',
@@ -49,6 +59,7 @@ const tokens = {
   emerald: { card: 'border-emerald-500/15 hover:border-emerald-500/40', icon: 'bg-emerald-500/10 text-emerald-400', pill: 'bg-emerald-500/8 text-emerald-300 border-emerald-500/15' },
   blue:    { card: 'border-blue-500/15 hover:border-blue-500/40',       icon: 'bg-blue-500/10 text-blue-400',       pill: 'bg-blue-500/8 text-blue-300 border-blue-500/15' },
   violet:  { card: 'border-violet-500/15 hover:border-violet-500/40',   icon: 'bg-violet-500/10 text-violet-400',   pill: 'bg-violet-500/8 text-violet-300 border-violet-500/15' },
+  cyan:    { card: 'border-cyan-500/15 hover:border-cyan-500/40',       icon: 'bg-cyan-500/10 text-cyan-400',       pill: 'bg-cyan-500/8 text-cyan-300 border-cyan-500/15' },
 };
 
 export default function Skills() {

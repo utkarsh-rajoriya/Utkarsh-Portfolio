@@ -78,7 +78,7 @@ export default function About() {
             <div className="relative w-72 h-80 sm:w-80 sm:h-96">
               <div className="absolute inset-0 bg-linear-to-br from-indigo-600/25 to-emerald-500/15 rounded-3xl rotate-3 scale-105" />
               <img
-                src="https://picsum.photos/seed/utkarsh-about/500/600"
+                src="/assets/utkarsh_futuredesk.png"
                 alt="Utkarsh at work"
                 className="ab-img relative w-full h-full object-cover rounded-3xl border border-indigo-500/20"
                 style={{ clipPath: 'inset(0 0% 0 0)' }}

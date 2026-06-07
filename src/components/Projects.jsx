@@ -7,7 +7,7 @@ const projects = [
     subtitle: 'Multi-Tenant SaaS POS & Restaurant Management',
     description:
       'A comprehensive Restaurant Management Platform with multi-tenant architecture, Role-Based Access Control (Admin, Manager, Staff), a live Kitchen Display System, dine-in table management grid, and real-time public reservation routing.',
-    image: 'https://picsum.photos/seed/tapanddine/800/500',
+    image: '/assets/Tapanddine.png',
     tags: ['Spring Boot 3', 'MySQL', 'React.js', 'Vite', 'RBAC', 'Multi-Tenant SaaS', 'KDS'],
     highlights: [
       'Multi-tenant data isolation with Role-Based Access Control across Admin, Manager, and Staff roles',
@@ -23,7 +23,7 @@ const projects = [
     subtitle: 'Short-Term Rental Property Management Platform',
     description:
       'A modern short-term rental property management platform using the MERN stack. Integrates the external Rentalwise Partners API via an Express backend proxy with HTTP Basic Auth, handling live property quotes, availability calendars, and booking creation.',
-    image: 'https://picsum.photos/seed/avenaa-platform/800/500',
+    image: '/assets/Avenaa.png',
     tags: ['React 19', 'Express', 'MongoDB', 'JWT Auth', 'REST APIs', 'Node.js', 'MERN'],
     highlights: [
       'Rentalwise Partners API integration via Express proxy with HTTP Basic Auth',
@@ -39,7 +39,7 @@ const projects = [
     subtitle: 'Pet Service Management Web Application',
     description:
       'Core backend architecture for a dedicated pet service platform. Implements complex booking lifecycles, user/deliverer role management, and dynamic GPS tracking for service fulfillments using Spring Boot, MongoDB, and Firebase Auth.',
-    image: 'https://picsum.photos/seed/borkie-pet/800/500',
+    image: '/assets/Borkie.png',
     tags: ['Spring Boot', 'MongoDB', 'Firebase Auth', 'GPS Tracking', 'Java', 'REST APIs'],
     highlights: [
       'Complex booking lifecycle management with user and deliverer role separation',
@@ -51,19 +51,21 @@ const projects = [
     color: 'blue',
   },
   {
-    title: 'Notes Management SaaS',
-    subtitle: 'Productivity & Information Architecture Platform',
+    title: 'Agrixo',
+    subtitle: 'Agriculture Marketplace · Backend API',
     description:
-      'A productivity platform engineered with minimal interaction friction and a clean information architecture. Focuses on efficient data handling, streamlined workflows, and a distraction-free user experience.',
-    image: 'https://picsum.photos/seed/notes-saas/800/500',
-    tags: ['React.js', 'SaaS', 'Node.js', 'MongoDB', 'REST APIs', 'Clean Architecture'],
+      'Full backend API for an agriculture marketplace connecting buyers, farmers/sellers, and delivery partners. Covers product catalog, cart/checkout, multi-role order fulfillment, earnings ledger, and bank account management.',
+    image: '/assets/Agrixo.png',
+    tags: ['Node.js', 'Express 5', 'PostgreSQL', 'Prisma', 'Firebase Auth', 'FCM', 'REST APIs'],
     highlights: [
-      'Minimal interaction friction with clean, distraction-free information architecture',
-      'Efficient data handling with streamlined CRUD workflows',
-      'Responsive design with smooth state transitions',
+      'Multi-role platform (buyers, farmers/sellers, delivery partners) with role-specific API flows',
+      'Firebase Auth ID token verification with FCM push notifications for real-time order updates',
+      'Full order lifecycle with seller_fulfillments and delivery_assignments for multi-role fulfillment',
+      'Earnings ledger with masked bank account management for PSP-linked seller payouts',
     ],
     liveLink: '#',
     liveLabel: 'View Project',
+    platform: 'Backend API',
     color: 'violet',
   },
 ];
@@ -139,7 +141,7 @@ export default function Projects() {
                   <img src={project.image} alt={project.title} className="pj-img w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                   <div className="absolute inset-0 bg-linear-to-t from-[#0c1220] via-[#0c1220]/20 to-transparent" />
                   <div className={`absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-bold backdrop-blur-sm border ${c.badge}`}>
-                    Full Stack
+                    {project.platform ?? 'Full Stack'}
                   </div>
                   <div className="absolute top-4 right-4 flex items-center gap-1.5 px-3 py-1 bg-green-500/20 border border-green-500/30 rounded-full text-xs font-semibold text-green-300 backdrop-blur-sm">
                     <span className="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse" />
