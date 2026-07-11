@@ -4,14 +4,14 @@ import { gsap } from '../utils/gsap';
 const experiences = [
   {
     company: 'Futuredesks Services',
-    role: 'Software Engineer',
+    role: 'Full-Stack Engineer',
     type: 'Full-time',
-    duration: 'Nov 2025 – Present',
+    duration: 'May 2025 – Present',
     isCurrent: true,
     color: 'indigo',
     points: [
       'Architect and engineer scalable software designs and high-performance client-side interfaces utilizing React.js.',
-      'Collaborate with cross-functional development teams to build secure, modular components and robust application workflows.',
+      'Collaborate with cross-functional development teams to build secure, modular microservices and robust application workflows.',
       'Optimize web infrastructure to enhance user interaction, system reliability, and responsive design across platforms.',
     ],
   },
@@ -23,9 +23,9 @@ const experiences = [
     isCurrent: true,
     color: 'emerald',
     points: [
-      'Architected full-scale SaaS platforms, focusing on clean layout hierarchies and streamlined application logic.',
+      'Architected full-scale Software as a Service (SaaS) platforms, focusing on clean layout hierarchies and streamlined application logic.',
       'Developed highly interactive, visually responsive custom web concepts featuring dynamic front-end state management.',
-      'Maintained a verified project portfolio on Contra demonstrating industry-recognized quality in product delivery.',
+      'Integrated Spring AI into backend architectures for startup clients, enabling advanced automation and intelligent data processing workflows.',
     ],
   },
   {

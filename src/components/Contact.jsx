@@ -30,7 +30,7 @@ const contactItems = [
       </svg>
     ),
     label: 'Location',
-    value: 'Agra, India',
+    value: 'Noida, Uttar Pradesh',
     href: null,
   },
 ];

@@ -10,47 +10,50 @@ const skills = [
       </svg>
     ),
     color: 'indigo',
-    items: ['React.js', 'Next.js', 'JavaScript', 'Bootstrap', 'Tailwind CSS', 'Responsive Web Design', 'Interface Wireframing'],
+    items: ['React.js', 'Next.js', 'JavaScript', 'Tailwind CSS', 'Responsive Web Design', 'Wireframing'],
   },
   {
-    category: 'Backend & Databases',
+    category: 'Backend & AI',
+    icon: (
+      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 9.5V19h9.5l5.74-6.76z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 8l2-2" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 12l-2 2" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 16l2-2" />
+      </svg>
+    ),
+    color: 'emerald',
+    items: ['Java', 'Spring Boot', 'Spring AI', 'Node.js', 'Express', 'RESTful APIs', 'Microservices', 'Kafka', 'JWT'],
+  },
+  {
+    category: 'Databases',
     icon: (
       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />
       </svg>
     ),
-    color: 'emerald',
-    items: ['Java', 'Spring Boot', 'RESTful APIs', 'Node.js', 'Express', 'MySQL', 'PostgreSQL', 'MongoDB', 'Mongo Atlas', 'Firebase'],
-  },
-  {
-    category: 'Core Competencies',
-    icon: (
-      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18" />
-      </svg>
-    ),
     color: 'blue',
-    items: ['System Architecture', 'Agile Frameworks', 'Git & GitHub', 'Multi-Tenant SaaS', 'JWT & Firebase Security'],
+    items: ['MySQL', 'PostgreSQL', 'MongoDB', 'MariaDB', 'Firebase'],
   },
   {
-    category: 'DevOps & CI/CD',
+    category: 'DevOps & Cloud',
     icon: (
       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" />
       </svg>
     ),
     color: 'cyan',
-    items: ['Docker', 'GitHub Actions', 'Jenkins', 'CI/CD Pipelines', 'Git'],
+    items: ['Docker', 'Kubernetes', 'Jenkins', 'GitHub Actions', 'AWS', 'GCP', 'CICD Pipelines', 'Git'],
   },
   {
-    category: 'Design Tools',
+    category: 'Tools & Soft Skills',
     icon: (
       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
       </svg>
     ),
     color: 'violet',
-    items: ['Adobe Photoshop', 'Adobe Illustrator', 'Figma'],
+    items: ['n8n', 'Generative AI', 'Adobe Photoshop', 'Capcut', 'MS Office', 'Communication', 'Problem Solving', 'Teamwork'],
   },
 ];
 

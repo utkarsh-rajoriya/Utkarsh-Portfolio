@@ -8,7 +8,7 @@ const stats = [
   { num: 2026, suffix: '', label: 'BCA Graduate',     icon: '🎓' },
 ];
 
-const tags = ['React.js', 'Java', 'Spring Boot', 'Node.js', 'MongoDB', 'MySQL', 'Figma', 'REST APIs', 'Tailwind CSS'];
+const tags = ['React.js', 'Node.js', 'Java', 'Spring Boot', 'Spring AI', 'MongoDB', 'MySQL', 'PostgreSQL', 'Docker', 'AWS', 'REST APIs', 'Tailwind CSS'];
 
 export default function About() {
   const secRef = useRef(null);
@@ -93,16 +93,16 @@ export default function About() {
           {/* Text */}
           <div className="ab-text">
             <p className="ab-p text-gray-400 leading-relaxed mb-5 text-[15px]">
-              I'm a <span className="text-indigo-400 font-medium">Full-stack Software Engineer</span> based in{' '}
-              <span className="text-indigo-400 font-medium">Agra, India</span> with hands-on experience delivering
-              scalable web applications from architecture to deployment. I currently work at{' '}
-              <span className="text-indigo-400 font-medium">Futuredesks Services</span>, building high-performance
+              Results-driven <span className="text-indigo-400 font-medium">Full-Stack Engineer</span> based in{' '}
+              <span className="text-indigo-400 font-medium">Noida, Uttar Pradesh</span>, specializing in scalable
+              web applications and AI-integrated solutions. I currently work at{' '}
+              <span className="text-indigo-400 font-medium">Futuredesks Services</span>, architecting high-performance
               React.js interfaces and robust Spring Boot backends for production systems.
             </p>
             <p className="ab-p text-gray-500 leading-relaxed mb-8 text-sm">
-              My expertise spans the full product lifecycle — from system architecture and REST API design to
-              responsive frontend development and secure platform integrations. I also freelance on Fiverr and Contra,
-              building SaaS platforms and custom web concepts with a strong focus on UI quality and clean code.
+              Experienced across the full product lifecycle — combining server-side architecture, Spring AI
+              capabilities, and CI/CD automation with high-end UI design to deliver secure, industry-leading
+              platforms. I also freelance on Fiverr and Contra, building SaaS platforms and custom web concepts.
             </p>
 
             <div className="ab-tags flex flex-wrap gap-2 mb-10">

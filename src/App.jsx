@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import Navbar     from './components/Navbar';
 import Hero       from './components/Hero';
 import About      from './components/About';
@@ -7,10 +7,18 @@ import Experience from './components/Experience';
 import Projects   from './components/Projects';
 import Education  from './components/Education';
 import Contact    from './components/Contact';
-import { gsap }   from './utils/gsap';
+import { gsap, ScrollTrigger } from './utils/gsap';
 
 export default function App() {
+  const appRef = useRef(null);
+
   useEffect(() => {
+    ScrollTrigger.config({
+      limitCallbacks: true,
+      ignoreMobileResize: true,
+      autoRefreshEvents: 'visibilitychange,DOMContentLoaded,load',
+    });
+
     const onClick = (e) => {
       const anchor = e.target.closest('a[href^="#"]');
       if (!anchor) return;
@@ -18,9 +26,9 @@ export default function App() {
       if (hash === '#' || !document.querySelector(hash)) return;
       e.preventDefault();
       gsap.to(window, {
-        duration: 1.1,
+        duration: 1.2,
         scrollTo: { y: hash, offsetY: 64 },
-        ease: 'power3.inOut',
+        ease: 'power4.inOut',
       });
     };
     document.addEventListener('click', onClick);
@@ -28,7 +36,7 @@ export default function App() {
   }, []);
 
   return (
-    <div className="bg-[#060b14] min-h-screen antialiased">
+    <div ref={appRef} className="bg-[#060b14] min-h-screen antialiased">
       <Navbar />
       <Hero />
       <About />

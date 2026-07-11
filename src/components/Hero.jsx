@@ -1,7 +1,5 @@
 import { useRef, useEffect } from 'react';
-import { gsap, ScrollTrigger } from '../utils/gsap';
-
-const NAME = 'Utkarsh Rajoriya';
+import { gsap } from '../utils/gsap';
 
 export default function Hero() {
   const heroRef = useRef(null);
@@ -22,42 +20,8 @@ export default function Hero() {
         .from('.h-img-wrap', { scale: 0.72, opacity: 0, rotation: 8, duration: 1.3, ease: 'power2.out' }, 0.35)
         .from('.fb',         { scale: 0, opacity: 0, duration: 0.55, stagger: 0.14, ease: 'back.out(2.8)' }, 1.4);
 
-      tl.call(() => {
-        gsap.to('.fb-1', { y: -14, duration: 2.3, repeat: -1, yoyo: true, ease: 'sine.inOut' });
-        gsap.to('.fb-2', { y: -11, duration: 2.9, repeat: -1, yoyo: true, ease: 'sine.inOut', delay: 0.55 });
-        gsap.to('.fb-3', { y: -17, duration: 3.2, repeat: -1, yoyo: true, ease: 'sine.inOut', delay: 0.28 });
-        gsap.to('.fb-4', { y: -9,  duration: 2.6, repeat: -1, yoyo: true, ease: 'sine.inOut', delay: 0.85 });
-      });
-
       gsap.to('.h-blob-1', { x: 70, y: -50, scale: 1.25, duration: 13, repeat: -1, yoyo: true, ease: 'sine.inOut' });
       gsap.to('.h-blob-2', { x: -60, y: 70, scale: 0.8,  duration: 16, repeat: -1, yoyo: true, ease: 'sine.inOut', delay: 6 });
-
-      gsap.to('.h-text-col', {
-        y: -90,
-        scrollTrigger: { trigger: heroRef.current, start: 'top top', end: 'bottom top', scrub: 1.5 },
-      });
-      gsap.to('.h-img-col', {
-        y: -55,
-        scrollTrigger: { trigger: heroRef.current, start: 'top top', end: 'bottom top', scrub: 2 },
-      });
-      gsap.to('.scroll-ind', {
-        opacity: 0, y: -18,
-        scrollTrigger: { trigger: heroRef.current, start: 'top top', end: '12% top', scrub: 1 },
-      });
-
-      const imgColX = gsap.quickTo('.h-img-col', 'x', { duration: 1.6, ease: 'power2.out' });
-      const blob1X  = gsap.quickTo('.h-blob-1',  'x', { duration: 2.2, ease: 'power2.out' });
-      const blob1Y  = gsap.quickTo('.h-blob-1',  'y', { duration: 2.2, ease: 'power2.out' });
-
-      const onMouseMove = (e) => {
-        const dx = (e.clientX - window.innerWidth  / 2) / (window.innerWidth  / 2);
-        const dy = (e.clientY - window.innerHeight / 2) / (window.innerHeight / 2);
-        imgColX(dx * 18);
-        blob1X(dx * -35);
-        blob1Y(dy * -25);
-      };
-      heroRef.current.addEventListener('mousemove', onMouseMove);
-      return () => heroRef.current?.removeEventListener('mousemove', onMouseMove);
     }, heroRef);
 
     return () => ctx.revert();
@@ -111,17 +75,17 @@ export default function Hero() {
           </h1>
 
           <p className="h-sub text-lg sm:text-xl text-gray-300 font-semibold mb-3">
-            Software Engineer &amp; Full Stack Developer
+            Software Engineer
           </p>
           <p className="h-desc text-gray-500 mb-5 lg:mb-8 max-w-lg leading-relaxed text-[15px]">
-            Building scalable web applications with React.js and Java Spring Boot — from architecture
-            and API design to high-end responsive frontends and secure platform integrations.
+            Results-driven Full-Stack Engineer specializing in scalable web applications
+            and AI-integrated solutions using React.js, Node.js, and Java Spring Boot.
           </p>
 
           {/* Contact chips */}
           <div className="flex flex-wrap gap-3 mb-5 lg:mb-9 text-xs text-gray-400">
             {[
-              { icon: 'M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0zM15 11a3 3 0 11-6 0 3 3 0 016 0z', text: 'Agra, India' },
+              { icon: 'M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0zM15 11a3 3 0 11-6 0 3 3 0 016 0z', text: 'Noida, Uttar Pradesh' },
               { icon: 'M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z', text: 'utkarshrajoriya00@gmail.com' },
               { icon: 'M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z', text: '+91 80571 89081' },
             ].map((c, i) => (
@@ -188,8 +152,8 @@ export default function Hero() {
 
             <div className="fb fb-1 absolute -top-3 right-4 px-3 py-1.5 bg-[#0c1220] border border-indigo-500/30 rounded-xl text-xs text-indigo-300 font-semibold shadow-xl whitespace-nowrap">React.js</div>
             <div className="fb fb-2 absolute -bottom-3 left-2 px-3 py-1.5 bg-[#0c1220] border border-emerald-500/30 rounded-xl text-xs text-emerald-300 font-semibold shadow-xl whitespace-nowrap">Spring Boot</div>
-            <div className="fb fb-3 absolute top-1/3 -right-14 px-3 py-1.5 bg-[#0c1220] border border-blue-500/30 rounded-xl text-xs text-blue-300 font-semibold shadow-xl whitespace-nowrap">Full Stack</div>
-            <div className="fb fb-4 absolute top-2/3 -left-14 px-3 py-1.5 bg-[#0c1220] border border-violet-500/30 rounded-xl text-xs text-violet-300 font-semibold shadow-xl whitespace-nowrap">UI / Design</div>
+            <div className="fb fb-3 absolute top-1/3 -right-14 px-3 py-1.5 bg-[#0c1220] border border-blue-500/30 rounded-xl text-xs text-blue-300 font-semibold shadow-xl whitespace-nowrap">Node.js</div>
+            <div className="fb fb-4 absolute top-2/3 -left-14 px-3 py-1.5 bg-[#0c1220] border border-violet-500/30 rounded-xl text-xs text-violet-300 font-semibold shadow-xl whitespace-nowrap">Full Stack</div>
           </div>
         </div>
       </div>

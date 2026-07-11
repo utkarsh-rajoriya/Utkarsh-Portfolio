@@ -6,7 +6,7 @@ const projects = [
     title: 'TapandDine',
     subtitle: 'Multi-Tenant SaaS POS & Restaurant Management',
     description:
-      'A comprehensive Restaurant Management Platform with multi-tenant architecture, Role-Based Access Control (Admin, Manager, Staff), a live Kitchen Display System, dine-in table management grid, and real-time public reservation routing.',
+      'Engineered a comprehensive Multi-Tenant SaaS Point of Sale (POS) and Restaurant Management Platform. Built with Spring Boot 3 and MySQL, featuring Role-Based Access Control to isolate multi-restaurant data securely. Designed a responsive React.js frontend including a live Kitchen Display System (KDS).',
     image: '/assets/Tapanddine.png',
     tags: ['Spring Boot 3', 'MySQL', 'React.js', 'Vite', 'RBAC', 'Multi-Tenant SaaS', 'KDS'],
     highlights: [
@@ -14,7 +14,7 @@ const projects = [
       'Live Kitchen Display System (KDS) and dine-in table management grid',
       'Real-time public reservation routing with Spring Boot 3 backend',
     ],
-    liveLink: '#',
+    liveLink: 'http://tapanddine.in/',
     liveLabel: 'View Project',
     color: 'indigo',
   },
@@ -22,15 +22,15 @@ const projects = [
     title: 'Avenaa',
     subtitle: 'Short-Term Rental Property Management Platform',
     description:
-      'A modern short-term rental property management platform using the MERN stack. Integrates the external Rentalwise Partners API via an Express backend proxy with HTTP Basic Auth, handling live property quotes, availability calendars, and booking creation.',
+      'Developed a modern short-term rental property management platform using the MERN stack (React 19, Express, MongoDB). Integrated the external Rentalwise Partners API via an Express backend proxy using HTTP Basic Auth, handling secure data synchronization for live property quotes, availability calendars, and booking creation.',
     image: '/assets/Avenaa.png',
     tags: ['React 19', 'Express', 'MongoDB', 'JWT Auth', 'REST APIs', 'Node.js', 'MERN'],
     highlights: [
       'Rentalwise Partners API integration via Express proxy with HTTP Basic Auth',
-      'Live property quotes, availability calendars, and booking creation',
+      'Secure data synchronization for live property quotes, availability calendars, and booking creation',
       'JWT-based authentication for secure user sessions',
     ],
-    liveLink: '#',
+    liveLink: 'https://avenaa.co.in/',
     liveLabel: 'View Project',
     color: 'emerald',
   },
@@ -38,7 +38,7 @@ const projects = [
     title: 'Borkie',
     subtitle: 'Pet Service Management Web Application',
     description:
-      'Core backend architecture for a dedicated pet service platform. Implements complex booking lifecycles, user/deliverer role management, and dynamic GPS tracking for service fulfillments using Spring Boot, MongoDB, and Firebase Auth.',
+      'Built the core backend architecture for a dedicated pet service management web application. Utilized Java Spring Boot and MongoDB alongside Firebase Auth for secure identity verification. Implemented complex booking lifecycles, user/deliverer role management, and endpoints to support dynamic GPS tracking.',
     image: '/assets/Borkie.png',
     tags: ['Spring Boot', 'MongoDB', 'Firebase Auth', 'GPS Tracking', 'Java', 'REST APIs'],
     highlights: [
@@ -46,7 +46,7 @@ const projects = [
       'Dynamic GPS tracking endpoints for real-time service fulfillment tracking',
       'Firebase Auth integration for secure identity verification',
     ],
-    liveLink: '#',
+    liveLink: 'https://www.borkie.in/',
     liveLabel: 'View Project',
     color: 'blue',
   },
@@ -86,30 +86,6 @@ export default function Projects() {
         y: 35, opacity: 0, duration: 0.75, stagger: 0.14, ease: 'power3.out',
         immediateRender: false, scrollTrigger: { trigger: secRef.current, start: 'top 72%' },
       });
-
-      gsap.utils.toArray('.pj-card').forEach((card, i) => {
-        gsap.from(card, {
-          x: i % 2 === 0 ? -90 : 90,
-          opacity: 0, duration: 0.9, ease: 'power3.out',
-          immediateRender: false, scrollTrigger: { trigger: '.pj-grid', start: 'top 75%' },
-          delay: i * 0.1,
-        });
-        gsap.from(card.querySelectorAll('.pj-hi'), {
-          x: 18, opacity: 0, duration: 0.4, stagger: 0.08, ease: 'power2.out',
-          immediateRender: false, scrollTrigger: { trigger: card, start: 'top 72%' },
-        });
-        gsap.from(card.querySelectorAll('.pj-tag'), {
-          scale: 0, opacity: 0, duration: 0.3, stagger: 0.04, ease: 'back.out(2)',
-          immediateRender: false, scrollTrigger: { trigger: card, start: 'top 68%' },
-        });
-      });
-
-      gsap.utils.toArray('.pj-img').forEach((img) => {
-        gsap.from(img, {
-          scale: 1.15, duration: 1.1, ease: 'power2.out',
-          immediateRender: false, scrollTrigger: { trigger: img, start: 'top 80%' },
-        });
-      });
     }, secRef);
     return () => ctx.revert();
   }, []);
@@ -137,14 +113,14 @@ export default function Projects() {
             const c = colorTokens[project.color];
             return (
               <div key={i} className={`pj-card group bg-[#0c1220] border rounded-2xl overflow-hidden transition-all duration-400 hover:-translate-y-2 hover:shadow-2xl ${c.border}`}>
-                <div className="relative overflow-hidden h-52">
-                  <img src={project.image} alt={project.title} className="pj-img w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                <div className="relative h-52">
+                  <img src={project.image} alt={project.title} className="pj-img w-full h-full object-cover" />
                   <div className="absolute inset-0 bg-linear-to-t from-[#0c1220] via-[#0c1220]/20 to-transparent" />
-                  <div className={`absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-bold backdrop-blur-sm border ${c.badge}`}>
+                  <div className="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-bold bg-[#0c1220]/90 text-indigo-300 border border-indigo-500/40 shadow-lg">
                     {project.platform ?? 'Full Stack'}
                   </div>
-                  <div className="absolute top-4 right-4 flex items-center gap-1.5 px-3 py-1 bg-green-500/20 border border-green-500/30 rounded-full text-xs font-semibold text-green-300 backdrop-blur-sm">
-                    <span className="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse" />
+                  <div className="absolute top-4 right-4 flex items-center gap-1.5 px-3 py-1 bg-green-600/90 text-green-100 rounded-full text-xs font-semibold border border-green-400/40 shadow-lg">
+                    <span className="w-1.5 h-1.5 bg-green-300 rounded-full animate-pulse" />
                     Built
                   </div>
                 </div>
@@ -171,15 +147,19 @@ export default function Projects() {
                     ))}
                   </div>
 
-                  <a
-                    href={project.liveLink}
-                    className={`inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold text-white transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg ${c.btn}`}
-                  >
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                    </svg>
-                    {project.liveLabel}
-                  </a>
+                  {project.liveLink !== '#' && (
+                    <a
+                      href={project.liveLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold text-white transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg ${c.btn}`}
+                    >
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                      </svg>
+                      {project.liveLabel}
+                    </a>
+                  )}
                 </div>
               </div>
             );
