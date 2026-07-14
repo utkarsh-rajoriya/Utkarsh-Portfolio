@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Navbar     from './components/Navbar';
 import Hero       from './components/Hero';
 import About      from './components/About';
@@ -11,8 +11,29 @@ import { gsap, ScrollTrigger } from './utils/gsap';
 
 export default function App() {
   const appRef = useRef(null);
+  const [isAssetsReady, setIsAssetsReady] = useState(false);
 
   useEffect(() => {
+    const preloadImages = async () => {
+      const imageUrls = ['/assets/utkarsh.png', '/assets/utkarsh_futuredesk.png'];
+
+      await Promise.all(
+        imageUrls.map(
+          (src) =>
+            new Promise((resolve) => {
+              const img = new Image();
+              img.onload = () => resolve();
+              img.onerror = () => resolve();
+              img.src = src;
+            })
+        )
+      );
+
+      setIsAssetsReady(true);
+    };
+
+    preloadImages();
+
     ScrollTrigger.config({
       limitCallbacks: true,
       ignoreMobileResize: true,
@@ -34,6 +55,17 @@ export default function App() {
     document.addEventListener('click', onClick);
     return () => document.removeEventListener('click', onClick);
   }, []);
+
+  if (!isAssetsReady) {
+    return (
+      <div className="min-h-screen bg-[#060b14] text-white flex items-center justify-center">
+        <div className="text-center">
+          <div className="mb-4 h-10 w-10 animate-spin rounded-full border-4 border-white/20 border-t-white mx-auto" />
+          <p className="text-lg font-medium">Loading portfolio...</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div ref={appRef} className="bg-[#060b14] min-h-screen antialiased">
